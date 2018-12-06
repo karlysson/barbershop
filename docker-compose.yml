@@ -1,0 +1,46 @@
+version: '2'
+
+services:
+  postgres:
+    image: 'postgres:9.5'
+    volumes:
+      - 'postgres:/var/lib/postgresql/data'
+
+  jobs:
+    depends_on:
+      - 'postgres'
+      - 'app'
+    build: .
+    command: bash start_jobs
+    volumes:
+      - '.:/barbershop'
+    volumes_from:
+      - box
+
+
+  app:
+    depends_on:
+      - 'postgres'
+    build: .
+    command: bash start
+    ports:
+      - '3000:3000'
+    volumes:
+      - '.:/barbershop'
+    volumes_from:
+    - box
+
+  box:
+    image: busybox
+    volumes:
+      - /box
+
+  mailcatcher:
+    image: yappabe/mailcatcher
+    ports:
+      - 1025:1025
+      - 1080:1080
+
+volumes:
+  postgres:
+  box:
