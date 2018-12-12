@@ -1,5 +1,5 @@
 
-![Logo of the project](https://raw.githubusercontent.com/karlysson/barbershop/master/doc/logo.png)
+![Logo of the project](https://raw.githubusercontent.com/karlysson/barbershop/master/doc/logo.jpg)
 
 
 ## BarberShop 
