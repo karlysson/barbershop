@@ -1,3 +1,14 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  
+  namespace :site do
+    get 'home/index'
+  end
+
+  namespace :backoffice do
+    get 'dashboard/index'
+  end
+
+  devise_for :users, :controllers => { registrations: 'registrations' }
+
+  root to: "site/home#index"
 end
