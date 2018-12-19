@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
   
+  
   namespace :site do
     get 'home/index'
   end
 
   namespace :backoffice do
-    get 'dashboard/index'
+    get 'dashboard', to: 'dashboard#index'
+    resources :clients
   end
 
   devise_for :users, :controllers => { registrations: 'registrations' }

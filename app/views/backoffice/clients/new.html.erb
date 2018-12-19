@@ -1,0 +1,30 @@
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/backoffice">Home</a>
+                </li>
+                <li class="active">Clientes</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Clientes
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> Novo Cliente
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
+
+            <%= render 'form', client: @client %>
+
+
+        </div>
+
+    </div>
+</div>    

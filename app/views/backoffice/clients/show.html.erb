@@ -1,0 +1,102 @@
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/backoffice">Home</a>
+                </li>
+                <li class="active">Clients</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Clients
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i> Visualizando
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
+
+            <div class="row">
+              <div class="col-xs-6">
+                  <br>
+                  		<div class="profile-user-info profile-user-info-striped">
+												<div class="profile-info-row">
+													<div class="profile-info-name"> ID </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="username"><%= @client.id %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Name </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="country"><%= @client.name %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> CPF </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="age"><%= @client.cpf %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Phone: </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="signup"><%= @client.phone %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Sex </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="login"><%= @client.sex %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Birth </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="login"><%= @client.birth %></span>
+													</div>
+												</div>
+
+												<div class="profile-info-row">
+													<div class="profile-info-name"> Email </div>
+
+													<div class="profile-info-value">
+														<span class="editable" id="login"><%= @client.email %></span>
+													</div>
+												</div>
+
+											</div>
+
+                  <br>
+
+                  <p id="notice"><%= notice %></p>
+              </div>
+            </div>
+
+              <div class="row">
+                <button class="btn btn-danger" type="button" onclick="location.href='/backoffice/clients'">
+                    <i class="ace-icon fa fa-undo bigger-110"></i>
+                    Voltar
+                </button>
+              </div>
+
+        </div>
+
+    </div>
+</div>    
