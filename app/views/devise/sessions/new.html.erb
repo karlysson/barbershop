@@ -1,26 +1,80 @@
-<h2>Log in</h2>
+<%= render 'layouts/shared/login_head' %>
+<body class="login-layout">
+  <div class="main-container">
+    <div class="main-content">
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <div class="login-container">
+            <div class="center">
+              <h1>
+                <i class="ace-icon fa fa-cut blue"></i>
+                <span class="red">Barber</span>
+                <span class="white" id="id-text2">Shop</span>
+              </h1>
+            </div>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+            <div class="space-6"></div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+            <div class="position-relative">
+              <div id="login-box" class="login-box visible widget-box no-border">
+                <div class="widget-body">
+                  <div class="widget-main">
+                    <h4 class="header blue lighter bigger">
+                      <i class="ace-icon fa fa-lock blue"></i>
+                      Por favor, digite e-mail e senha!
+                    </h4>
+                    <div class="space-6"></div>
+                    <h2>Log in</h2>
+                    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                      <div class="field">
+                        <%= f.label :email, class: 'control-label' %><br />
+                        <span class="block input-icon input-icon-right">
+                          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "E-mail", class: 'form-control' %>
+                          <i class="ace-icon fa fa-user"></i>
+                        </span>                        
+                      </div>
 
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
-    </div>
-  <% end -%>
+                      <div class="field"><br>
+                        <%= f.label :senha, class: 'control-label'  %><br />                        
+                        <span class="block input-icon input-icon-right">
+                          <%= f.password_field :password, autocomplete: "current-password", placeholder: "Senha", class: 'form-control'  %>
+                          <i class="ace-icon fa fa-lock"></i>
+                        </span>
+                      </div>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
+                      <div class="space"></div>                    
 
-<%= render "devise/shared/links" %>
+                      <div class="clearfix">
+                        <% if devise_mapping.rememberable? -%>
+                          <div class="inline">
+                            <%= f.check_box :remember_me %>
+                            <%= f.label :remember_me, class: 'ace' %>
+                          </div>
+                        <% end -%>
+                        <div class="actions">
+                          <%= f.submit "Log in", class: 'width-35 pull-right btn btn-sm btn-primary' %>
+                        </div>
+                      </div>                      
+                    <% end %>
+
+                  </div><!-- /.widget-main -->
+                  <div class="toolbar clearfix">
+                    <div>
+                      <a href="#" data-target="#forgot-box" class="forgot-password-link"></a>
+                    </div>
+
+                    <div>
+                      <a href="#" data-target="#signup-box" class="user-signup-link"></a>
+                    </div>
+                  </div>
+                </div><!-- /.widget-body -->
+              </div><!-- /.login-box -->
+            </div><!-- /.position-relative -->
+
+          </div>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div><!-- /.main-content -->
+  </div><!-- /.main-container -->
+
+<%= render 'layouts/shared/login_footer' %>

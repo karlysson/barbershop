@@ -55,3 +55,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # My Gem 
 gem 'devise'
+gem 'devise-i18n'
+gem 'cancancan'
+gem 'mini_magick', '~> 4.8'
+gem 'font-awesome-sass', '~> 5.3.1'
+gem 'carrierwave', '~> 1.0'
+gem 'flag_shih_tzu'
+gem 'select2-rails'
+gem 'rails-i18n'
+gem 'geocoder'
+gem 'will_paginate', '~> 3.1.0'
+gem 'will_paginate-bootstrap4'
