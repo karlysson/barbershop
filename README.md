@@ -83,7 +83,7 @@ The main features of the application are;
 
 ## Authors
 
-* **Jorge Toledo** 
+* **Jorge M Toledo** 
 * **Karlysson Alves** 
 * **Ricardo Silva** 
 
