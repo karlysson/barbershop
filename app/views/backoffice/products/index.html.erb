@@ -1,0 +1,170 @@
+<div class="main-content">
+    <div class="main-content-inner">
+        <div class="breadcrumbs ace-save-state" id="breadcrumbs">
+            <ul class="breadcrumb">
+                <li>
+                    <i class="ace-icon fa fa-home home-icon"></i>
+                    <a href="/backoffice">Home</a>
+                </li>
+                <li class="active">Produtos</li>
+            </ul>
+            <!-- /.breadcrumb -->
+        </div>
+
+        <div class="page-content">
+            <div class="page-header">
+                <h1> Produtos
+                    <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i>Listando
+                    </small>
+                </h1>
+            </div>
+            <!-- /.page-header -->
+
+
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <div class="clearfix">
+                        <div class="pull-right tableTools-container"></div>
+                    </div>
+                    <div class="table-header">Produtos</div>
+
+
+                    <!-- div.dataTables_borderWrap -->
+                    <div>
+                        <table id="dynamic-table" class="table table-striped table-bordered table-hover dataTable no-footer"
+                            role="grid" aria-describedby="dynamic-table_info">
+                            <thead>
+                                <tr role="row">
+
+                                    <th class="center">ID</th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1" colspan="1"
+                                        aria-label="Domain: activate to sort column ascending">
+                                        <i class="ace-icon fa fa-user bigger-110 hidden-480"></i>Nome
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1" colspan="1"
+                                        aria-label="Price: activate to sort column ascending">
+                                        <i class="ace-icon fa fa-credit-card bigger-110 hidden-480"></i>Preço
+                                    </th>
+
+                                    <th class="sorting" tabindex="0" aria-controls="dynamic-table" rowspan="1" colspan="1"
+                                        aria-label="Price: activate to sort column ascending">
+                                        <i class="ace-icon fa fa-credit-card bigger-110 hidden-480"></i>Status
+                                    </th>
+
+
+
+                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="">
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <% @products.each do |product| %>
+                                <tr role="row" class="odd">
+
+                                    <td class="center">
+                                        <%= product.id %>
+                                    </td>
+                                    <td>
+                                        <%= product.name %>
+                                    </td>
+                                    <td>
+                                        <%= product.description %>
+                                    </td>
+                                    <td>
+                                        <%= product.status %>
+                                    </td>
+
+
+                                    <td>
+                                        <div class="action-buttons">
+                                          <div class="hidden-sm hidden-xs btn-group">
+                                            <%= link_to [:backoffice, product ] do %>
+                                              <button class="btn btn-xs btn-success">
+                                                <i class="ace-icon fa fa-search-plus bigger-130"></i>
+                                              </button>
+                                            <% end %>
+
+
+                                            <%= link_to edit_backoffice_product_path(product) do %>
+                                              <button class="btn btn-xs btn-info">
+                                                <i class=" ace-icon fa fa-pencil bigger-130"></i>
+                                              </button>
+                                            <% end %>
+
+                                            <a href="#">
+                                              <%= button_to [:backoffice, product ], method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-xs btn-danger" do %>
+                                                  <i class=" ace-icon fa fa-trash bigger-130"></i>
+                                              <% end %>
+                                            </a>
+                                              <!-- <button class="btn btn-xs btn-warning">
+                                                <i class="ace-icon fa fa-flag bigger-120"></i>
+                                              </button> -->
+                                            </div>
+
+                                            <div class="hidden-md hidden-lg">
+                                              <div class="inline pos-rel">
+                                                <button class="btn btn-minier btn-primary dropdown-toggle" data-toggle="dropdown" data-position="auto">
+                                                  <i class="ace-icon fa fa-cog icon-only bigger-110"></i>
+                                                </button>
+
+                                                <ul class="dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close">
+
+
+
+                                                  <li>
+
+                                                    <a href="<%= backoffice_product_path(product) %>" class="tooltip-info" data-rel="tooltip" title="View">
+                                                      <span class="blue">
+                                                        <i class="ace-icon fa fa-search-plus bigger-120"></i>
+                                                      </span>
+                                                    </a>
+                                                  </li>
+
+                                                  <li>
+                                                    <a href="<%= edit_backoffice_product_path(product) %>" class="tooltip-success" data-rel="tooltip" title="Edit">
+                                                      <span class="green">
+                                                        <i class="ace-icon fa fa-pencil-square-o bigger-120"></i>
+                                                      </span>
+                                                    </a>
+                                                  </li>
+
+                                                  <li>
+                                                    <a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+                                                      <%= button_to [:backoffice, product ], method: :delete, data: { confirm: 'Are you sure?' } do %>
+
+                                                          <span class="red">
+                                                            <i class="ace-icon fa fa-trash-o bigger-120"></i>
+                                                          </span>
+                                                      <% end %>
+                                                    </a>
+                                                  </li>
+                                                </ul>
+                                              </div>
+                                            </div>
+
+
+                                        </div>
+                                    </td>
+                                </tr>
+                                <% end %>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <button class="btn btn-info" type="button" onclick="location.href='/backoffice/products/new'">
+                    <i class="ace-icon fa fa-check bigger-110"></i> Novo Produto
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>

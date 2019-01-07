@@ -1,0 +1,65 @@
+
+    <% if product.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true" >x</button>
+      <ul>
+      <% product.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-xs-6">
+    <div class="widget-box">
+      <div class="widget-header">
+        <h4 class="widget-title"></h4>
+      </div>
+
+      <div class="widget-body">
+        <div class="widget-main no-padding">
+          <%= form_for([:backoffice, product]) do |f| %>
+            <!-- <legend>Form</legend> -->
+            <fieldset class="col-xs-12">
+
+
+                <label class="col-xs-12" >Nome</label>
+                <%= f.text_field :name %>
+
+                <br>
+                <br>
+
+                <label class="col-xs-12">Descrição</label>
+                <%= f.text_field :description %>
+
+                <br>
+                <br>
+                <label class="col-xs-12">Preço de Venda</label>
+                <%= f.text_field :price %>
+
+                <br>
+                <br>
+
+
+                <label class="col-xs-12">Status </label>
+                <%= f.select :status, :collection => Product.statuses.keys.to_a %>
+
+
+
+
+            </fieldset>
+
+            <div class="form-actions center">
+              <button class="btn btn-danger" type="button" onclick="location.href='/backoffice/products'">
+                  <i class="ace-icon fa fa-undo bigger-110"></i> Cancelar
+              </button>
+              <input type="submit" name="commit" value="Confirmar" class="btn btn-info">
+            </div>
+
+
+
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
